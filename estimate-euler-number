@@ -1,5 +1,4 @@
-
-# Calculation of Euler Number e
+# Calculate Euler Number, e
 import math
 
 def euler(n):
