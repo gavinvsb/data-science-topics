@@ -2,9 +2,10 @@
 
 # Defining todo tasks
 
-# Use recordtype like a mutable named tuple.
+# Use "recordtype" object because it's like a mutable named tuple.
 
-# Create an exponential distribution with 10,000 samples to be used to populate due date. 
+# Create an exponential distribution with 10,000 samples to be used to populate due date.
+# Using exponential distribution because in my experience, that's generally how tasks are distributed
 # Assume the duration or complexity of any task is always less than the due date. Baiscally, instantiate a time constraint.
 # All tasks must be reasonable and doable within the due date.
 
