@@ -15,8 +15,7 @@ tasks = {
     "Task 1": [4, 7, 12],
 }
 
-data = pd.DataFrame(tasks, index=["optimistic", "likely", 
-                                  "pessimistic"])
+data = pd.DataFrame(tasks, index=["optimistic", "likely", "pessimistic"])
 points = [0] * no_of_experiments
 
 for column in data:
@@ -24,16 +23,12 @@ for column in data:
     alpha = ((4*b) + c - (5*a))/(c - a)
     beta = ((5*c) - a - (4*b))/(c - a)
     r = np.random.beta(alpha, beta, no_of_experiments)
-    p = (r*(c-a)) + a
+    p = (r*(c - a)) + a
     points += p
 
 plt.figure(figsize=(12,8))
-n, bins, patches = plt.hist(points, num_bins, 
-                            range = (0, np.max(points)),
-                            color = "skyblue", lw=1, 
-                            edgecolor="steelblue", 
-                            weights=[1/no_of_experiments]*
-                            no_of_experiments)
+n, bins, patches = plt.hist(points, num_bins, range = (0, np.max(points)), color = "skyblue", lw=1, edgecolor = "steelblue", 
+                            weights = [1/no_of_experiments]*no_of_experiments)
 plt.show()
 
 # Analyze data
@@ -61,9 +56,9 @@ print()
 def print_probability(bins, mean, sd, experiments, fraction):
     upper = len(np.where(bins <= mean + sd)[0])
     lower = len(np.where(bins <= mean - sd)[0])
-    prob = (np.sum(n[:upper])-np.sum(n[:lower]))*100
-    print("* between", "%.1f" % (mean-sd/2), "and", 
-          "%.1f" % (mean+sd/2), ":", "%.1f%%" % prob, 
+    prob = (np.sum(n[:upper]) - np.sum(n[:lower]))*100
+    print("* between", "%.1f" % (mean - sd/2), "and", 
+          "%.1f" % (mean + sd/2), ":", "%.1f%%" % prob, 
           "(within %sσ)" % fraction)
 
 print("Probabilities")
