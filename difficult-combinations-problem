@@ -1,4 +1,6 @@
-""" Interview question
+"""
+Interview question
+
 Write a function according to the specifications below.
 1. Function: generate_combos(intList, target)
 2. intList: a list of distinct integers of any length and will contain only positive and/or negative integers
